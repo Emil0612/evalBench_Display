@@ -1,0 +1,36 @@
+# Licensed source data and anything derived from it (Millistream text/prices)
+data/
+testsets/
+results/
+
+# Logs from the exploration phase
+*_out.txt
+*_log.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.hypothesis/
+.coverage
+htmlcov/
+.env
+
+.streamlit/secrets.toml
+
+# Local notes and per-machine settings (local only)
+CHEATSHEET.md
+config/saved_selections.yaml
+config/self_hosted.yaml
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local model server script (per-machine setup)
+scripts/local_llm.sh

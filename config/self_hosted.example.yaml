@@ -1,0 +1,25 @@
+# Example for config/self_hosted.yaml: models served on your own hardware by an OpenAI-compatible server.
+# The Run page ("Self-hosted models") writes that file; you can also copy this one and edit it by hand.
+# Each model appears as self/<name>. It is free, needs no OpenRouter key, and no prompt leaves your network.
+models:
+  qwen3-8b-bf16:
+    base_url: http://localhost:8000/v1          # vLLM: vllm serve Qwen/Qwen3-8B
+    model: Qwen/Qwen3-8B                        # the name in the server's /models list
+    cutoff: 2024-12-31                          # from the model card; needed for scoring
+    released: 2025-04-29                        # weights published; used by the after-release baseline
+    quantization: bf16
+    revision: 9c925d64d72725edaf899c6cb9c377fd0709d9c5   # Hugging Face commit: pins the exact weights
+    hardware: 1x RTX 4090 24 GB
+    parameters: [temperature, seed]             # only these are sent
+    extra_body:                                 # merged into every request
+      chat_template_kwargs: {enable_thinking: false}
+    concurrency: 2                              # requests at once
+  llama-3.1-8b-q4:
+    base_url: http://localhost:11434/v1         # Ollama
+    model: llama3.1:8b-instruct-q4_K_M
+    cutoff: 2023-12-31
+    released: 2024-07-23
+    quantization: Q4_K_M
+    parameters: [temperature, seed]
+    # api_key_env: VLLM_API_KEY                 # the NAME of an environment variable, never the key itself
+    # extra_tokens: 2048                        # more answer budget for models that think first

@@ -1,0 +1,19 @@
+# Manual knowledge-cutoff overrides: <openrouter model id>: YYYY-MM-DD. Wins over OpenRouter's value.
+# qwen/qwen3.8-flash: PROVISIONAL ESTIMATE. OpenRouter lists no cutoff and none is published; the model was released
+# 2026-08-26. The estimated knowledge boundary on the Evidence page checks this date.
+qwen/qwen3.8-flash: 2026-03-31
+# Cutoff ladder (2026-10-05): OpenRouter's stated cutoffs, frozen at registration.
+openai/gpt-3.5-turbo: 2021-09-30
+openai/gpt-4o-mini-2024-07-18: 2023-10-31
+meta-llama/llama-3.1-70b-instruct: 2023-12-31
+# Cutoff-ladder extension (2026-10-06): OpenRouter's stated cutoffs, frozen at registration.
+deepseek/deepseek-v3.2-exp: 2025-07-31
+qwen/qwen3-235b-a22b-2507: 2025-06-30
+qwen/qwen3-next-80b-a3b-instruct: 2025-09-30
+# New models (2026-10-07). Gemma 4: the model card's pre-training cutoff ("cutoff date of January 2025"), stated for the
+# whole family. Qwen3.6 27B: no cutoff is published; the calibrated estimate of
+# docs/preregistration/2026-10-07-new-models.md (US recall changepoint 2024-02 + 7 months), frozen 2026-10-07 before
+# its Nordic answers.
+google/gemma-4-31b-it: 2025-01-31
+google/gemma-4-26b-a4b-it: 2025-01-31
+qwen/qwen3.6-27b: 2024-09-30

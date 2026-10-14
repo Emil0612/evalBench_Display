@@ -1,0 +1,13 @@
+# Where each cutoff in model_cutoffs.yaml comes from: listing = OpenRouter's stated cutoff, frozen at registration;
+# estimate = our own estimate (no cutoff is published). Read by the app's cutoff labels and the staggered table, so
+# a frozen listing stays a listing even if OpenRouter later drops it.
+openai/gpt-3.5-turbo: listing
+openai/gpt-4o-mini-2024-07-18: listing
+meta-llama/llama-3.1-70b-instruct: listing
+qwen/qwen3.8-flash: estimate
+deepseek/deepseek-v3.2-exp: listing
+qwen/qwen3-235b-a22b-2507: listing
+qwen/qwen3-next-80b-a3b-instruct: listing
+google/gemma-4-31b-it: model card
+google/gemma-4-26b-a4b-it: model card
+qwen/qwen3.6-27b: estimate

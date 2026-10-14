@@ -1,0 +1,40 @@
+# Used when the app is started from the repo root (uv run evalbench-ui).
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "viewer"          # no "Deploy" button or developer menu
+showErrorDetails = "full"
+
+[theme]
+base = "dark"                   # dark only: the app has no light mode (user's decision, 2026-10-01)
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+headingFont = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+codeFont = "JetBrains Mono:https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+baseFontSize = 15
+baseRadius = "8px"
+buttonRadius = "8px"
+headingFontSizes = ["1.85rem", "1.3rem", "1.05rem", "0.95rem", "0.9rem", "0.85rem"]
+headingFontWeights = [650, 600, 600, 600, 600, 600]
+metricValueFontSize = "1.75rem"
+metricValueFontWeight = 600
+linkUnderline = false
+showWidgetBorder = true
+showSidebarBorder = true
+primaryColor = "#9b85ff"
+backgroundColor = "#1a1a19"
+secondaryBackgroundColor = "#242423"
+textColor = "#ffffff"
+borderColor = "#2c2c2a"
+dataframeBorderColor = "#2c2c2a"
+dataframeHeaderBackgroundColor = "#242423"
+linkColor = "#b3a3ff"
+# method role colours (ui.ROLE_COLORS): control, probe, private, secondary
+greenTextColor = "#4cc38a"
+blueTextColor = "#6aa8ff"
+orangeTextColor = "#f0a35e"
+grayTextColor = "#a3a19a"
+chartCategoricalColors =["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#008300", "#9085e9", "#e66767"]
+
+[theme.sidebar]
+backgroundColor = "#141413"

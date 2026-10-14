@@ -1,0 +1,5 @@
+# Manual release-date overrides: <openrouter model id>: YYYY-MM-DD. Wins over OpenRouter's listing date.
+# Use one when a listing predates the snapshot it serves now: post-training data can reach the snapshot's release.
+# openai/gpt-3.5-turbo: listed 2023-05-28, but the alias serves gpt-3.5-turbo-0125 (released 2024-01-25), the last
+# GPT-3.5 Turbo snapshot; OpenRouter reports only its own id. Cutoff-ladder plan §0, deviation 1.
+openai/gpt-3.5-turbo: 2024-01-25

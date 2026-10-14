@@ -1,0 +1,27 @@
+# Open-weight models pinned to one provider endpoint (OpenRouter slug, see the model's page or
+# /api/v1/models/<id>/endpoints). A pinned model is always served by exactly this endpoint, so its answers
+# come from one configuration: the same weights at the same precision. No fallback: if the endpoint is down,
+# its calls fail (not billed) and are retried on the next run. Answers from other routes are not reused.
+# Closed models (OpenAI, Google, ...) have a single provider and need no pin.
+meta-llama/llama-3.3-70b-instruct: novita/bf16    # full precision (bf16), 99.7% uptime (2026-09-29)
+deepseek/deepseek-chat-v3.1: coreweave/fp8        # DeepSeek's native precision (fp8), ~100% uptime (2026-09-29)
+# Closed models run at more than one host (GPT-4.1 Mini answered 4 of 1,152 pilot questions via Azure), so they
+# are pinned too. A base slug matches every region of that provider, but not paid priority/flex tiers.
+openai/gpt-4.1-mini: openai                        # OpenAI's own endpoint (not Azure)
+google/gemini-2.5-flash: google-vertex             # all pilot C answers came from Vertex
+# Added for pilot D (2026-09-29).
+openai/gpt-oss-20b: coreweave/fp4                  # OpenAI released it in 4-bit (MXFP4): native precision, 99.95% uptime
+qwen/qwen3.8-flash: alibaba                        # the only provider
+# Cutoff ladder (2026-10-05).
+openai/gpt-3.5-turbo: openai                       # OpenAI's own endpoint; the alias serves gpt-3.5-turbo-0125
+openai/gpt-4o-mini-2024-07-18: openai              # the dated snapshot; OpenAI's own endpoint
+meta-llama/llama-3.1-70b-instruct: deepinfra/turbo # fp8, 99.2% uptime (2026-10-05); Llama 3.3 is bf16 at Novita
+# Cutoff-ladder extension (2026-10-06).
+deepseek/deepseek-v3.2-exp: siliconflow/fp8          # the only provider; fp8 is DeepSeek's native precision
+qwen/qwen3-235b-a22b-2507: nebius/fp8                # 99.95% uptime (2026-10-06)
+qwen/qwen3-next-80b-a3b-instruct: deepinfra/fp8      # 100% uptime (2026-10-06)
+# New models (2026-10-07): both Gemma 4 models at the same host and full precision, so dense vs mixture of experts is
+# not confounded by hosting; Qwen3.6 at Alibaba's own endpoint (as Qwen3.8 Flash).
+google/gemma-4-31b-it: novita/bf16                 # bf16 = Google's released precision, 99.0% uptime (2026-10-07)
+google/gemma-4-26b-a4b-it: novita/bf16             # bf16, 99.9% uptime (2026-10-07)
+qwen/qwen3.6-27b: alibaba                          # the maker's endpoint, 100% uptime (2026-10-07)
